@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@import "tailwindcss";
+
+/* =========================
+   Theme Colors
+========================= */
+
+:root {
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --surface-soft: #f1f3f8;
+  --text: #17171c;
+  --text-muted: #686b75;
+  --border: #e2e5ec;
+  --accent: #4f46e5;
+}
+
+.dark {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface-soft: #15151d;
+  --text: #f5f5f7;
+  --text-muted: #a1a1aa;
+  --border: #252532;
+  --accent: #6366f1;
+}
+
+/* =========================
+   Global Styles
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+.font-code {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* =========================
+   Hero Card Floating
+========================= */
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-hero-float {
+  animation: hero-float 6s ease-in-out infinite;
+}
+
+/* =========================
+   Hero Entrance Animation
+========================= */
+
+@keyframes hero-content-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-card-reveal {
+  from {
+    opacity: 0;
+    transform: translateX(30px) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.animate-hero-content {
+  animation: hero-content-reveal 700ms ease-out both;
+}
+
+.animate-hero-card {
+  animation: hero-card-reveal 800ms ease-out 150ms both;
+}
+
+/* =========================
+   VS Code Style Cursor
+========================= */
+
+.code-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.55em;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-radius: 2px;
+  background-color: var(--accent);
+  box-shadow:
+    0 0 7px
+    color-mix(in srgb, var(--accent) 50%, transparent);
+  transform-origin: center;
+  animation: code-cursor-expand 1s ease-in-out infinite;
+}
+
+@keyframes code-cursor-expand {
+  0%,
+  100% {
+    transform: scaleX(0.45);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   Skills Marquee
+========================= */
+
+.skills-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.skills-marquee::before,
+.skills-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 90px;
+  pointer-events: none;
+}
+
+.skills-marquee::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--bg),
+    transparent
+  );
+}
+
+.skills-marquee::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--bg),
+    transparent
+  );
+}
+
+.skills-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 4rem;
+  animation: skills-train 32s linear infinite;
+}
+
+.skills-marquee-item {
+  display: flex;
+  min-width: 90px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  transition: transform 250ms ease;
+}
+
+.skills-marquee-icon {
+  width: 32px;
+  height: 32px;
+  transition:
+    transform 250ms ease,
+    filter 250ms ease;
+}
+
+.skills-marquee-name {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--text-muted);
+  transition: color 250ms ease;
+}
+
+.skills-marquee-item:hover {
+  transform: translateY(-4px);
+}
+
+.skills-marquee-item:hover .skills-marquee-icon {
+  filter: drop-shadow(
+    0 0 8px
+    color-mix(in srgb, currentColor 45%, transparent)
+  );
+}
+
+.skills-marquee-item:hover .skills-marquee-name {
+  color: var(--text);
+}
+
+.skills-marquee:hover .skills-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes skills-train {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================
+   Project Slide Animation
+========================= */
+
+.project-slide {
+  animation: project-slide-in 400ms ease-out both;
+}
+
+@keyframes project-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =========================
+   Reduced Motion
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-float,
+  .animate-hero-content,
+  .animate-hero-card,
+  .code-cursor,
+  .skills-marquee-track,
+  .project-slide {
+    animation: none;
+  }
+
+  .code-cursor {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
