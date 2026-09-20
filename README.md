@@ -1,75 +1,128 @@
-# React + TypeScript + Vite
+# Mohamed Salih — Frontend Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive developer portfolio built with React, TypeScript, Tailwind CSS, and Vite.
 
-Currently, two official plugins are available:
+## Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://salih-portfolio-zeta.vercel.app
 
-## React Compiler
+## About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This portfolio showcases my frontend development skills, projects, technical stack, and contact information.
 
-## Expanding the ESLint configuration
+I focus on building responsive and user-friendly web applications using modern frontend technologies.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React
+- TypeScript
+- JavaScript
+- Tailwind CSS
+- HTML
+- CSS
+- Vite
+- Git
+- GitHub
+- Formspree
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Responsive design for desktop, tablet, and mobile
+- Dark and light theme
+- Animated portfolio sections
+- Skills showcase
+- Project carousel
+- Resume download
+- Contact form with Formspree
+- Social and contact links
+- Scroll-to-top button
 
-```
+## Projects
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Job Application Tracker
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+A React-based application for organizing and tracking job applications.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Features:
+- Dashboard
+- Add and manage applications
+- Search and filtering
+- Sorting
+- Edit application details
+- Persistent data using LocalStorage
 
-```
+Technologies:
+React, TypeScript, React Router, Tailwind CSS, LocalStorage
+
+Repository:
+https://github.com/Salih-111/Job-Application-Tracker
+
+### Student Grade Management System
+
+A console-based Java application for managing student records and academic performance.
+
+Features:
+- Student record management
+- Subject marks
+- Automatic total and percentage calculation
+- Grade evaluation
+- Student search and deletion
+- Class summary
+
+Technologies:
+Java, OOP, ArrayList
+
+Repository:
+https://github.com/Salih-111/Student-Grade-Manager
+
+## Getting Started
+
+Clone the repository:
+
+git clone https://github.com/Salih-111/salih-portfolio.git
+
+Navigate to the project:
+
+cd salih-portfolio
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
+npm run dev
+
+Create a production build:
+
+npm run build
+
+## Project Structure
+
+src/
+├── assets/
+├── components/
+├── data/
+├── hooks/
+├── sections/
+├── App.tsx
+├── index.css
+└── main.tsx
+
+public/
+└── resume.pdf
+
+## Contact
+
+Email:
+mohamedsalih8764@gmail.com
+
+LinkedIn:
+https://www.linkedin.com/in/mohamed-salih-dev
+
+GitHub:
+https://github.com/Salih-111
+
+## License
+
+This project is for personal portfolio purposes.
