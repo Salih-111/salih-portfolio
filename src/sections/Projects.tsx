@@ -1,6 +1,7 @@
 import { useState } from "react"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react"
 import { FaGithub } from "react-icons/fa6"
+
 import { projects } from "../data/projects"
 
 function Projects() {
@@ -9,11 +10,15 @@ function Projects() {
   const currentProject = projects[currentIndex]
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1))
+    setCurrentIndex((prev) =>
+      prev === 0 ? projects.length - 1 : prev - 1,
+    )
   }
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1))
+    setCurrentIndex((prev) =>
+      prev === projects.length - 1 ? 0 : prev + 1,
+    )
   }
 
   return (
@@ -46,7 +51,7 @@ function Projects() {
         {/* Project Card */}
         <div
           key={currentProject.title}
-          className="project-slide overflow-hidden rounded-3xl border"
+          className="project-slide mt-10 overflow-hidden rounded-3xl border"
           style={{
             backgroundColor: "var(--surface)",
             borderColor: "var(--border)",
@@ -133,8 +138,8 @@ function Projects() {
                 ))}
               </div>
 
-              {/* GitHub */}
-              <div className="mt-8">
+              {/* Project Links */}
+              <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href={currentProject.github}
                   target="_blank"
@@ -149,12 +154,27 @@ function Projects() {
                   <FaGithub size={17} />
                   GitHub
                 </a>
+
+                {currentProject.live && (
+                  <a
+                    href={currentProject.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5"
+                    style={{
+                      backgroundColor: "var(--accent)",
+                      color: "white",
+                    }}
+                  >
+                    <ExternalLink size={17} />
+                    Live Demo
+                  </a>
+                )}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Carousel Navigation */}
         {/* Carousel Navigation */}
         <div className="relative mt-7 flex items-center justify-between">
           {/* Previous */}
@@ -202,7 +222,9 @@ function Projects() {
               style={{
                 width: index === currentIndex ? "24px" : "6px",
                 backgroundColor:
-                  index === currentIndex ? "var(--accent)" : "var(--border)",
+                  index === currentIndex
+                    ? "var(--accent)"
+                    : "var(--border)",
               }}
             />
           ))}

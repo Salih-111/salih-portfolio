@@ -1,5 +1,6 @@
 import JATImage from "../assets/JAT.png"
 import SGMImage from "../assets/SGM.png"
+import PPWImage from "../assets/PPW.png"
 
 export type Project = {
   title: string
@@ -8,6 +9,7 @@ export type Project = {
   github: string
   liveDemo?: string
   image?: string
+  live?: string
 }
 
 export const projects: Project[] = [
@@ -23,6 +25,7 @@ export const projects: Project[] = [
       "LocalStorage",
     ],
     github: "https://github.com/Salih-111/Job-Application-Tracker",
+    live: "https://salih-111.github.io/Job-Application-Tracker/",
     image: JATImage,
   },
 
@@ -33,5 +36,15 @@ export const projects: Project[] = [
     technologies: ["Java", "OOP", "ArrayList"],
     github: "https://github.com/Salih-111/Student-Grade-Manager",
     image: SGMImage,
+  },
+
+  {
+    title: "Personal Developer Portfolio",
+    description:
+      "A modern, responsive developer portfolio built to showcase my frontend skills, projects, and contact information using a clean and professional interface.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Formspree"],
+    github: "https://github.com/Salih-111/salih-portfolio",
+    live: "https://salih-portfolio-zeta.vercel.app",
+    image: PPWImage,
   },
 ]
