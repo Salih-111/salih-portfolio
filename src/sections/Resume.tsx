@@ -51,7 +51,7 @@ function Resume() {
 
             {/* Download Button */}
             <a
-              href="/resume.pdf"
+              href="/SALIH_RESUME.pdf"
               download
               className="inline-flex shrink-0 items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(99,102,241,0.3)]"
               style={{
