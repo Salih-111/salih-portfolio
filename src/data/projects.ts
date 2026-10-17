@@ -1,6 +1,7 @@
 import JATImage from "../assets/JAT.png"
 import SGMImage from "../assets/SGM.png"
 import PPWImage from "../assets/PPW.png"
+import HOSImage from "../assets/HOS.png"
 
 export type Project = {
   title: string
@@ -13,6 +14,24 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+
+{
+  title: "HomeSpend – Household Expense Tracker",
+  description:
+    "A full-stack household expense tracker for managing daily expenses, reviewing transaction history, and monitoring monthly spending through a responsive interface.",
+  technologies: [
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "MySQL",
+  ],
+  github: "https://github.com/Salih-111/HomeSpend",
+  live: "https://home-spend-sigma.vercel.app/",
+  image: HOSImage,
+},
+
   {
     title: "Job Application Tracker",
     description:

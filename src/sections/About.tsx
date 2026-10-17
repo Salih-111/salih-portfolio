@@ -1,19 +1,10 @@
-import {
-  Code2,
-  GraduationCap,
-  Layers3,
-  Sparkles,
-} from "lucide-react"
+import { Code2, GraduationCap, Layers3, Sparkles } from "lucide-react"
 
 function About() {
   return (
-    <section
-      id="about"
-      className="relative py-24 sm:py-28"
-    >
+    <section id="about" className="relative py-24 sm:py-28">
       <div className="mx-auto w-full max-w-7xl px-6">
         <div className="grid items-center gap-12 md:grid-cols-2">
-
           {/* Left Content */}
           <div className="animate-hero-content">
             <p
@@ -35,18 +26,19 @@ function About() {
                 className="max-w-xl text-base leading-8"
                 style={{ color: "var(--text-muted)" }}
               >
-                I'm a Computer Science Engineering graduate focused on
-                frontend development. I enjoy turning ideas into responsive
-                and user-friendly web applications.
+                I'm a Computer Science Engineering graduate passionate about
+                building full-stack web applications that are responsive,
+                reliable, and user-friendly.
               </p>
-
+              <br />
               <p
                 className="max-w-xl text-base leading-8"
                 style={{ color: "var(--text-muted)" }}
               >
-                I'm currently focused on building with React and TypeScript
-                while improving my skills through practical projects and
-                continuous learning.
+                I work with React and TypeScript on the frontend, along with
+                Node.js, Express.js, and MySQL on the backend. I enjoy learning
+                new technologies and turning ideas into practical applications
+                through hands-on projects.
               </p>
             </div>
           </div>
@@ -83,7 +75,6 @@ function About() {
 
               {/* Info Items */}
               <div className="space-y-5">
-
                 {/* Education */}
                 <div className="flex gap-4">
                   <div
@@ -139,7 +130,7 @@ function About() {
                       className="mt-1 font-medium"
                       style={{ color: "var(--text)" }}
                     >
-                      Frontend Development
+                      Full Stack Development
                     </p>
                   </div>
                 </div>
@@ -169,7 +160,7 @@ function About() {
                       className="mt-1 font-medium"
                       style={{ color: "var(--text)" }}
                     >
-                      React · TypeScript · JavaScript
+                      React · TypeScript · Node.js · MySQL
                     </p>
                   </div>
                 </div>
@@ -203,11 +194,9 @@ function About() {
                     </p>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

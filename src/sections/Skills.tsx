@@ -3,38 +3,31 @@ import {
   FaGitAlt,
   FaGithub,
   FaHtml5,
-  FaJava,
   FaJs,
   FaReact,
 } from "react-icons/fa6"
 
-import { SiMysql, SiTypescript } from "react-icons/si"
+import { SiExpress, SiMysql, SiTypescript } from "react-icons/si"
+
+import { FaNodeJs } from "react-icons/fa"
 import { VscVscode } from "react-icons/vsc"
 
-const frontendSkills = ["HTML", "CSS", "JavaScript", "React", "TypeScript"]
+const frontendSkills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "TypeScript",
+  "Tailwind CSS",
+]
 
-const programmingSkills = ["Java"]
+const backendSkills = ["Node.js", "Express.js", "REST APIs"]
 
 const databaseSkills = ["MySQL"]
 
 const toolSkills = ["Git", "GitHub", "VS Code"]
 
 const marqueeSkills = [
-  {
-    name: "React",
-    icon: FaReact,
-    color: "#61DAFB",
-  },
-  {
-    name: "TypeScript",
-    icon: SiTypescript,
-    color: "#3178C6",
-  },
-  {
-    name: "JavaScript",
-    icon: FaJs,
-    color: "#F7DF1E",
-  },
   {
     name: "HTML",
     icon: FaHtml5,
@@ -46,9 +39,29 @@ const marqueeSkills = [
     color: "#1572B6",
   },
   {
-    name: "Java",
-    icon: FaJava,
-    color: "#ED8B00",
+    name: "JavaScript",
+    icon: FaJs,
+    color: "#F7DF1E",
+  },
+  {
+    name: "React",
+    icon: FaReact,
+    color: "#61DAFB",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    color: "#3178C6",
+  },
+  {
+    name: "Node.js",
+    icon: FaNodeJs,
+    color: "#339933",
+  },
+  {
+    name: "Express.js",
+    icon: SiExpress,
+    color: "#ffffff",
   },
   {
     name: "MySQL",
@@ -71,7 +84,6 @@ const marqueeSkills = [
     color: "#007ACC",
   },
 ]
-
 function SkillGroup({ title, skills }: { title: string; skills: string[] }) {
   return (
     <div
@@ -131,8 +143,9 @@ function Skills() {
             className="mt-4 text-base leading-7"
             style={{ color: "var(--text-muted)" }}
           >
-            A mix of frontend technologies, programming fundamentals, database
-            knowledge, and development tools.
+            A combination of frontend and backend technologies, database
+            knowledge, and development tools used to build full-stack web
+            applications.
           </p>
         </div>
 
@@ -140,7 +153,7 @@ function Skills() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           <SkillGroup title="Frontend" skills={frontendSkills} />
 
-          <SkillGroup title="Programming" skills={programmingSkills} />
+          <SkillGroup title="Backend" skills={backendSkills} />
 
           <SkillGroup title="Database" skills={databaseSkills} />
 

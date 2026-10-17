@@ -1,5 +1,3 @@
-
-
 import { Download } from "lucide-react"
 
 function Resume() {
@@ -44,14 +42,14 @@ function Resume() {
                 className="mt-3 max-w-xl text-sm leading-7 sm:text-base"
                 style={{ color: "var(--text-muted)" }}
               >
-                Take a look at my resume to learn more about my
-                education, skills, and projects.
+                Take a look at my resume to learn more about my education,
+                skills, and projects.
               </p>
             </div>
 
             {/* Download Button */}
             <a
-              href="/SALIH_RESUME.pdf"
+              href="/SALIH_JFS.pdf"
               download
               className="inline-flex shrink-0 items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(99,102,241,0.3)]"
               style={{

@@ -1,24 +1,29 @@
-import { useState } from "react"
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react"
-import { FaGithub } from "react-icons/fa6"
 
-import { projects } from "../data/projects"
+import { useState } from "react";
+import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
+
+import { projects } from "../data/projects";
 
 function Projects() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const currentProject = projects[currentIndex]
+  const currentProject = projects[currentIndex];
 
   const goToPrevious = () => {
     setCurrentIndex((prev) =>
       prev === 0 ? projects.length - 1 : prev - 1,
-    )
-  }
+    );
+  };
 
   const goToNext = () => {
     setCurrentIndex((prev) =>
       prev === projects.length - 1 ? 0 : prev + 1,
-    )
+    );
+  };
+
+  if (projects.length === 0) {
+    return null;
   }
 
   return (
@@ -44,7 +49,8 @@ function Projects() {
             className="mt-4 text-base leading-7"
             style={{ color: "var(--text-muted)" }}
           >
-            A look at some of the applications and projects I've worked on.
+            A look at some of the full-stack applications and projects I've
+            worked on.
           </p>
         </div>
 
@@ -61,19 +67,18 @@ function Projects() {
             {/* Project Preview */}
             <div
               className="flex min-h-[320px] items-center justify-center p-6 sm:p-8 lg:min-h-[460px]"
-              style={{
-                backgroundColor: "var(--surface-soft)",
-              }}
+              style={{ backgroundColor: "var(--surface-soft)" }}
             >
               {currentProject.image ? (
                 <img
                   src={currentProject.image}
                   alt={`${currentProject.title} preview`}
-                  className="h-full max-h-[400px] w-full rounded-2xl object-cover shadow-xl"
+                  className="max-h-[400px] w-full rounded-2xl object-cover shadow-xl"
+                  loading="lazy"
                 />
               ) : (
                 <div
-                  className="flex aspect-video w-full max-w-2xl items-center justify-center rounded-2xl border"
+                  className="flex aspect-video w-full max-w-2xl items-center justify-center rounded-2xl border p-4"
                   style={{
                     backgroundColor: "var(--bg)",
                     borderColor: "var(--border)",
@@ -140,26 +145,28 @@ function Projects() {
 
               {/* Project Links */}
               <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href={currentProject.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5"
-                  style={{
-                    borderColor: "var(--border)",
-                    backgroundColor: "var(--surface-soft)",
-                    color: "var(--text)",
-                  }}
-                >
-                  <FaGithub size={17} />
-                  GitHub
-                </a>
+                {currentProject.github && (
+                  <a
+                    href={currentProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5"
+                    style={{
+                      borderColor: "var(--border)",
+                      backgroundColor: "var(--surface-soft)",
+                      color: "var(--text)",
+                    }}
+                  >
+                    <FaGithub size={17} />
+                    GitHub
+                  </a>
+                )}
 
                 {currentProject.live && (
                   <a
                     href={currentProject.live}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5"
                     style={{
                       backgroundColor: "var(--accent)",
@@ -176,62 +183,72 @@ function Projects() {
         </div>
 
         {/* Carousel Navigation */}
-        <div className="relative mt-7 flex items-center justify-between">
-          {/* Previous */}
-          <button
-            type="button"
-            onClick={goToPrevious}
-            aria-label="Previous project"
-            className="flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--accent)] hover:text-white hover:shadow-[0_0_22px_rgba(99,102,241,0.35)]"
-            style={{
-              borderColor: "var(--accent)",
-              backgroundColor:
-                "color-mix(in srgb, var(--accent) 10%, var(--surface))",
-              color: "var(--accent)",
-            }}
-          >
-            <ArrowLeft size={20} />
-          </button>
+        {projects.length > 1 && (
+          <>
+            <div className="relative mt-7 flex items-center justify-between">
+              <button
+                type="button"
+                onClick={goToPrevious}
+                aria-label="Previous project"
+                className="flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--accent)] hover:text-white hover:shadow-[0_0_22px_rgba(99,102,241,0.35)]"
+                style={{
+                  borderColor: "var(--accent)",
+                  backgroundColor:
+                    "color-mix(in srgb, var(--accent) 10%, var(--surface))",
+                  color: "var(--accent)",
+                }}
+              >
+                <ArrowLeft size={20} />
+              </button>
 
-          {/* Next */}
-          <button
-            type="button"
-            onClick={goToNext}
-            aria-label="Next project"
-            className="flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--accent)] hover:text-white hover:shadow-[0_0_22px_rgba(99,102,241,0.35)]"
-            style={{
-              borderColor: "var(--accent)",
-              backgroundColor:
-                "color-mix(in srgb, var(--accent) 10%, var(--surface))",
-              color: "var(--accent)",
-            }}
-          >
-            <ArrowRight size={20} />
-          </button>
-        </div>
+              <span
+                className="font-code text-sm"
+                style={{ color: "var(--text-muted)" }}
+              >
+                {currentIndex + 1} / {projects.length}
+              </span>
 
-        {/* Carousel Dots */}
-        <div className="mt-4 flex items-center justify-center gap-2">
-          {projects.map((project, index) => (
-            <button
-              key={project.title}
-              type="button"
-              onClick={() => setCurrentIndex(index)}
-              aria-label={`Show ${project.title}`}
-              className="h-1.5 rounded-full transition-all duration-300"
-              style={{
-                width: index === currentIndex ? "24px" : "6px",
-                backgroundColor:
-                  index === currentIndex
-                    ? "var(--accent)"
-                    : "var(--border)",
-              }}
-            />
-          ))}
-        </div>
+              <button
+                type="button"
+                onClick={goToNext}
+                aria-label="Next project"
+                className="flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--accent)] hover:text-white hover:shadow-[0_0_22px_rgba(99,102,241,0.35)]"
+                style={{
+                  borderColor: "var(--accent)",
+                  backgroundColor:
+                    "color-mix(in srgb, var(--accent) 10%, var(--surface))",
+                  color: "var(--accent)",
+                }}
+              >
+                <ArrowRight size={20} />
+              </button>
+            </div>
+
+            {/* Carousel Dots */}
+            <div className="mt-4 flex items-center justify-center gap-2">
+              {projects.map((project, index) => (
+                <button
+                  key={project.title}
+                  type="button"
+                  onClick={() => setCurrentIndex(index)}
+                  aria-label={`Show ${project.title}`}
+                  aria-current={index === currentIndex ? "true" : undefined}
+                  className="h-1.5 rounded-full transition-all duration-300"
+                  style={{
+                    width: index === currentIndex ? "24px" : "6px",
+                    backgroundColor:
+                      index === currentIndex
+                        ? "var(--accent)"
+                        : "var(--border)",
+                  }}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

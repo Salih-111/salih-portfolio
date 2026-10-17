@@ -39,8 +39,7 @@ function Hero() {
             )
           `,
           backgroundSize: "70px 70px",
-          maskImage:
-            "linear-gradient(to bottom, black 0%, transparent 85%)",
+          maskImage: "linear-gradient(to bottom, black 0%, transparent 85%)",
           opacity: 0.35,
         }}
       />
@@ -58,7 +57,6 @@ function Hero() {
       {/* Main Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-20">
         <div className="grid items-center gap-12 md:grid-cols-2">
-
           {/* Left Content */}
           <div className="animate-hero-content">
             <p
@@ -73,10 +71,7 @@ function Hero() {
               style={{ color: "var(--text)" }}
               aria-label="Mohamed Salih"
             >
-              {fullName.slice(
-                0,
-                Math.min(visibleLetters, firstNameLength),
-              )}
+              {fullName.slice(0, Math.min(visibleLetters, firstNameLength))}
 
               <span style={{ color: "var(--accent)" }}>
                 {visibleLetters > firstNameLength
@@ -89,15 +84,16 @@ function Hero() {
               className="mt-4 text-2xl font-semibold sm:text-3xl"
               style={{ color: "var(--text)" }}
             >
-              Frontend Developer
+              Junior Full Stack Developer
             </h2>
 
             <p
               className="mt-6 max-w-xl text-base leading-7"
               style={{ color: "var(--text-muted)" }}
             >
-              I build responsive web applications with React,
-              TypeScript, and modern frontend technologies.
+              I build responsive full-stack web applications using React,
+              TypeScript, Node.js, Express.js, and MySQL, creating user-friendly
+              interfaces and reliable backend APIs.
             </p>
 
             {/* Buttons */}
@@ -173,111 +169,50 @@ function Hero() {
               </div>
 
               {/* Code */}
-              <div className="overflow-x-auto p-6">
-                <pre className="font-code text-sm leading-7 sm:text-[15px]">
+              <div className="overflow-hidden p-6">
+                <pre className="whitespace-pre-wrap break-words font-code text-sm leading-7 sm:text-[15px]">
                   <code style={{ color: "var(--text)" }}>
-                    <span style={{ color: "#c084fc" }}>
-                      const
-                    </span>{" "}
-
-                    <span style={{ color: "var(--accent)" }}>
-                      developer
-                    </span>{" "}
-
-                    <span style={{ color: "var(--text-muted)" }}>
-                      =
-                    </span>{" "}
-                    {"{"}
+                    <span style={{ color: "#c084fc" }}>const</span>{" "}
+                    <span style={{ color: "var(--accent)" }}>developer</span>{" "}
+                    <span style={{ color: "var(--text-muted)" }}>=</span> {"{"}
                     {"\n"}
-
                     {"  "}
-
-                    <span style={{ color: "#60a5fa" }}>
-                      name
-                    </span>
-
-                    <span style={{ color: "var(--text-muted)" }}>
-                      :{" "}
-                    </span>
-
-                    <span style={{ color: "#4ade80" }}>
-                      "Salih"
-                    </span>
-                    ,
-                    {"\n"}
-
+                    <span style={{ color: "#60a5fa" }}>name</span>
+                    <span style={{ color: "var(--text-muted)" }}>: </span>
+                    <span style={{ color: "#4ade80" }}>"Salih"</span>,{"\n"}
                     {"  "}
-
-                    <span style={{ color: "#60a5fa" }}>
-                      role
-                    </span>
-
-                    <span style={{ color: "var(--text-muted)" }}>
-                      :{" "}
-                    </span>
-
+                    <span style={{ color: "#60a5fa" }}>role</span>
+                    <span style={{ color: "var(--text-muted)" }}>: </span>
                     <span style={{ color: "#4ade80" }}>
-                      "Frontend Developer"
+                      "Junior Full Stack Developer"
                     </span>
-                    ,
-                    {"\n"}
-
+                    ,{"\n"}
                     {"  "}
-
-                    <span style={{ color: "#60a5fa" }}>
-                      stack
-                    </span>
-
-                    <span style={{ color: "var(--text-muted)" }}>
-                      : [
-                    </span>
-
-                    <span style={{ color: "#4ade80" }}>
-                      "React"
-                    </span>
-
-                    <span style={{ color: "var(--text-muted)" }}>
-                      ,{" "}
-                    </span>
-
-                    <span style={{ color: "#4ade80" }}>
-                      "TypeScript"
-                    </span>
-
-                    <span style={{ color: "var(--text-muted)" }}>
-                      ],
-                    </span>
-
+                    <span style={{ color: "#60a5fa" }}>stack</span>
+                    <span style={{ color: "var(--text-muted)" }}>: [ </span>
                     {"\n"}
-
                     {"  "}
-
-                    <span style={{ color: "#60a5fa" }}>
-                      mindset
-                    </span>
-
+                    <span style={{ color: "#4ade80" }}>"React"</span>
+                    <span style={{ color: "var(--text-muted)" }}>, </span>
+                    <span style={{ color: "#4ade80" }}>"TypeScript"</span>
+                    <span style={{ color: "var(--text-muted)" }}>, </span>
+                    <span style={{ color: "#4ade80" }}>"Node.js"</span>
                     <span style={{ color: "var(--text-muted)" }}>
-                      :{" "}
+                    ,{"\n"}
+                    {"  "}
                     </span>
-
-                    <span style={{ color: "#4ade80" }}>
-                      "Build. Learn. Improve."
-                    </span>
-
+                    <span style={{ color: "#4ade80" }}>"Express.js"</span>
+                    <span style={{ color: "var(--text-muted)" }}>, </span>
+                    <span style={{ color: "#4ade80" }}>"MySQL"</span>
+                    <span style={{ color: "var(--text-muted)" }}> ],</span>
                     {"\n"}
-
                     {"}"}
-
-                    <span
-                      className="code-cursor"
-                      aria-hidden="true"
-                    />
+                    <span className="code-cursor" aria-hidden="true" />
                   </code>
                 </pre>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
